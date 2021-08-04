@@ -1,8 +1,10 @@
 package caller
 
-import "runtime"
+import (
+	"os"
+)
 
 func Caller(skip int) string {
-	_, b, _, _ := runtime.Caller(skip)
-	return b
+	path, _ := os.Getwd()
+	return path
 }
